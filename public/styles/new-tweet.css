@@ -1,0 +1,31 @@
+.new-tweet {
+  display: flex;
+  flex-direction: column;
+  width: 110%;
+  font-family: sans-serif;
+}
+
+#tweetForm {
+  display: flex;
+  flex-direction: column;
+}
+
+#tweet-text {
+  border: hidden;
+  background-color: #f4f1ec;
+  border-bottom: 2px solid black;
+}
+
+#tweetFooter {
+  padding-top: 10px;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  font-family: Bungee;
+}
+
+#sendTweet {
+  color: white;
+  background-color: rgb(70, 70, 203);
+  font-family: Bungee;
+}

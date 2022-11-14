@@ -30,11 +30,18 @@
     integrity="sha512-xh6O/CkQoPOWDdYTDqeRdPCVd1SpvCA9XXcUnZS2FmJNp1coAFzvtCN9BmamE+4aHK8yyUHUSCcJHgXloTyT2A=="
     crossorigin="anonymous" referrerpolicy="no-referrer" />
 
+    <!--New tweet CSS-->
+    <link rel="stylesheet" href="/styles/new-tweet.css" type="text/css" />
+
+
   <!-- External JS -->
   <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
 
   <!-- App JS -->
   <script type="text/javascript" src="/scripts/client.js"></script>
+  <script type="text/javascript" src="/scripts/composer-char-counter.js"></script>
+
+
 </head>
 
 <body>
@@ -61,7 +68,19 @@
   </header>
 
   <!-- Page-specific (main) content here -->
-  <main class="container"></main>
+  <main class="container">
+    <!--New tweet HTML-->
+    <section class="new-tweet">
+      <h2>Compose Tweet</h2>
+      <form id="tweetForm" method="POST" action="/tweets/">
+        <textarea name="text" id="tweet-text" placeholder="What are you humming about?"></textarea>
+        <div id="tweetFooter">
+          <button id="sendTweet" type="submit">Tweet</button>
+          <output name="counter" class="counter" for="tweet-text">140</output>
+        </div>
+      </form>
+    </section>
+  </main>
 </body>
 
 </html>
