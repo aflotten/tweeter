@@ -1,0 +1,68 @@
+.tweetBox {
+  display: flex;
+  flex-direction: column;
+  width: 90%;
+  padding-top: 50px;
+  padding-bottom: 50px;
+}
+
+.tweets {
+  border: solid black;
+  border-width: 4px;
+  
+}
+
+.tweetHeader {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+}
+
+.person {
+  display: flex;
+  flex-direction: row;
+  margin-bottom: 20px;;
+  
+}
+
+.avatar {
+  margin-left: 16px;
+  margin-top: 22px;
+  margin-right: 13px;
+}
+
+.handle {
+  color: silver;
+  margin-top: 22px;
+  margin-right: 16px;
+}
+
+.tweetContent {
+  padding: 20px;
+  margin-bottom: 20px;
+  margin-left: 20px;
+  font-size: 25px;
+}
+
+.tweetFooter {
+  padding: 10px;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  border-top: solid black;
+  border-width: 4px;
+  margin-left: 14px;
+  margin-right: 14px;
+}
+
+.timeCreated {
+  font-size: 15px;
+}
+
+.tweets:hover {
+  box-shadow: 12px 12px lightslategray;
+}
+
+.icons i:hover {
+  color: rgb(164, 147, 51);
+}
