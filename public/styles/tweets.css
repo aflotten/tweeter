@@ -1,4 +1,4 @@
-.tweetBox {
+#tweetBox {
   display: flex;
   flex-direction: column;
   width: 90%;
@@ -9,6 +9,7 @@
 .tweets {
   border: solid black;
   border-width: 4px;
+  margin-bottom: 10px;
   
 }
 
