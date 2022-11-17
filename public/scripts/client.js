@@ -34,13 +34,14 @@ $(document).ready(function () {
   ]
 
   const renderTweets = function (tweets) {
+    $("#tweetBox").empty();
     // loops through tweets
     for (const tweet of tweets) {
       // calls createTweetElement for each tweet
       const $tweet = createTweetElement(tweet);
       // takes return value and appends it to the tweets container
       console.log($tweet)
-      $('#tweetBox').append($tweet);
+      $('#tweetBox').prepend($tweet);
 
     }
 
@@ -74,7 +75,7 @@ $(document).ready(function () {
 
 
 
-  $("#tweetForm").submit(function (event) {
+  $("#tweetForm").submit(function(event) {
 
     event.preventDefault();
     const max = 140;
@@ -86,18 +87,20 @@ $(document).ready(function () {
       alert("Tweet is too long!")
     } else {
       let str = $("#tweetForm").serialize();
-
       $.ajax({
-        url: "/tweets ", method: "POST",
+        url: "/tweets ", 
+        type: "POST",
         data: str,
-        success: function (response) { console.log(response) },
+        success: function (response) { loadTweets() },
         error: function (error) { console.log(error) }
       });
     };
   });
+  
 
 
   const loadTweets = function () {
+    $("send-tweet").load("/tweet")
     $.ajax({
       type: "GET",
       dataType: "JSON",
