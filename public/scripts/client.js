@@ -7,33 +7,18 @@
 // Test / driver code (temporary). Eventually will get this from the server.
 $(document).ready(function () {
 
-  const data = [
-    {
-      "user": {
-        "name": "Newton",
-        "avatars": "https://i.imgur.com/73hZDYK.png"
-        ,
-        "handle": "@SirIsaac"
-      },
-      "content": {
-        "text": "If I have seen further it is by standing on the shoulders of giants"
-      },
-      "created_at": 1461116232227
-    },
-    {
-      "user": {
-        "name": "Descartes",
-        "avatars": "https://i.imgur.com/nlhLi3I.png",
-        "handle": "@rd"
-      },
-      "content": {
-        "text": "Je pense , donc je suis"
-      },
-      "created_at": 1461113959088
-    }
-  ]
+  $(".errEmpty").hide();
+  $(".errTooLong").hide();
 
-  const renderTweets = function (tweets) {
+  const data = []
+
+  const escape = function(str) {
+    let div = document.createElement("div");
+    div.appendChild(document.createTextNode(str));
+    return div.innerHTML;
+  };
+
+  const renderTweets = function(tweets) {
     $("#tweetBox").empty();
     // loops through tweets
     for (const tweet of tweets) {
@@ -47,7 +32,7 @@ $(document).ready(function () {
 
   }
 
-  const createTweetElement = function (tweet) {
+  const createTweetElement = function(tweet) {
     let $tweet = (`
   <article class="tweets">
   <header class="tweetHeader">
@@ -57,7 +42,7 @@ $(document).ready(function () {
     </div>
     <div class="handle"> ${tweet.user.handle} </div>
   </header>
-  <div class="tweetContent"> ${tweet.content.text} </div>
+  <div class="tweetContent"> ${escape(tweet.content.text)} </div>
   <footer class="tweetFooter">
     <span class="timeCreated"> ${timeago.format(tweet.created_at)}</span>
     <div class="icons">
@@ -82,9 +67,9 @@ $(document).ready(function () {
     const total = $(this).find("#tweet-text").val().length;
 
     if (!total) {
-      alert("Tweet cannot be empty!")
+      $(".errEmpty").slideDown();
     } else if (total - max > 0) {
-      alert("Tweet is too long!")
+      $(".errTooLong").slideDown();
     } else {
       let str = $("#tweetForm").serialize();
       $.ajax({
@@ -94,11 +79,11 @@ $(document).ready(function () {
         success: function (response) { loadTweets() },
         error: function (error) { console.log(error) }
       });
+      $(".errEmpty").hide();
+      $(".errTooLong").hide();
     };
   });
   
-
-
   const loadTweets = function () {
     $("send-tweet").load("/tweet")
     $.ajax({
@@ -108,7 +93,6 @@ $(document).ready(function () {
 
     })
       .then(function (newTweet) {
-        console.log("THIS HERE", newTweet)
         renderTweets(newTweet);
       })
   };

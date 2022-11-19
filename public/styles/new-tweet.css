@@ -8,6 +8,19 @@
 #tweetForm {
   display: flex;
   flex-direction: column;
+  margin-top: 80px;
+}
+
+.errEmpty {
+  display: flex;
+  justify-content: center;
+  margin-top: 30px;
+}
+
+.errTooLong {
+  display: flex;
+  justify-content: center;
+  margin-top: 30px;
 }
 
 #tweet-text {
