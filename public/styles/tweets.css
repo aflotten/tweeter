@@ -1,7 +1,7 @@
 #tweetBox {
   display: flex;
   flex-direction: column;
-  width: 90%;
+  width: 110%;
   padding-top: 50px;
   padding-bottom: 50px;
 }
@@ -67,3 +67,4 @@
 .icons i:hover {
   color: rgb(164, 147, 51);
 }
+
