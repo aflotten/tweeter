@@ -1,5 +1,4 @@
 $(document).ready(function() {
-console.log(this)
 $(".new-tweet form textarea").on("input", function() {
   let counter = 140 - this.value.length;
 

@@ -79,6 +79,7 @@ $(document).ready(function () {
         success: function (response) { loadTweets() },
         error: function (error) { console.log(error) }
       });
+      $("#tweet-text").val("");
       $(".errEmpty").hide();
       $(".errTooLong").hide();
     };
