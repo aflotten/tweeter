@@ -13,7 +13,11 @@ This repository is the starter code for the project: Students will fork and clon
 4. Go to <http://localhost:8080/> in your browser.
 
 ## Project images
+Tweeter Home Page!
+<img width="987" alt="TweeterMain" src="https://user-images.githubusercontent.com/87041176/203664851-cd3d89ef-44f3-4073-a079-2ccb7aadf6a4.png">
 
+Tweet Page!
+<img width="977" alt="TweetPage" src="https://user-images.githubusercontent.com/87041176/203664905-84380222-6f66-41ce-aaae-adcf1316bb84.png">
 
 
 
