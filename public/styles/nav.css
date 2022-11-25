@@ -1,11 +1,11 @@
 .allNav .navBar {
-  position: relative;
+  position: fixed;
+  height: 120px;
   background-color: #dbb109;
   background-image: url("https://www.transparenttextures.com/patterns/asfalt-dark.png");
   left: 0;
   right: 0;
-  top: 0;
-  z-index: 1000;
+  z-index: 1;
 }
 
 .navBar {
