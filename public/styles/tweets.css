@@ -4,6 +4,8 @@
   width: 110%;
   padding-top: 50px;
   padding-bottom: 50px;
+  inline-size: 675px;
+  overflow-wrap: break-word;
 }
 
 .tweets {
